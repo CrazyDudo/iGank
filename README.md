@@ -1,4 +1,8 @@
 # iGank
+
+>Flutter版Gank.io手机客户端。 A new Flutter application for Gank.io.
+
+
 #### 最简单的例子学习：   
 1. 网络请求  
 2. json转对象  
