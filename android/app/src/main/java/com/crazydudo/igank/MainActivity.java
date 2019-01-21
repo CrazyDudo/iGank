@@ -4,8 +4,11 @@ import android.os.Bundle;
 
 import io.flutter.app.FlutterActivity;
 import io.flutter.plugins.GeneratedPluginRegistrant;
+
 import android.view.*;
-import com.flutter_webview_plugin.FlutterWebviewPlugin;
+
+import com.flutter_webview_plugin.*;
+
 public class MainActivity extends FlutterActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +29,6 @@ public class MainActivity extends FlutterActivity {
     public void onBackPressed() {
         moveTaskToBack(false);
         super.onBackPressed();
-        final FlutterWebviewPlugin flutterWebviewPlugin = new FlutterWebviewPlugin();
 
-        flutterWebviewPlugin.close();
     }
 }
