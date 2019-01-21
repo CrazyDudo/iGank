@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -80,12 +81,18 @@ class _AndroidProjectListState extends State<AndroidProjectList> {
         children: <Widget>[
           ClipRRect(
             borderRadius: BorderRadius.circular(4.0),
-            child: Image.network(
-              iamgeUrl,
+            child: new CachedNetworkImage(
+              imageUrl: iamgeUrl,
               width: 80.0,
               height: 120.0,
               fit: BoxFit.fill,
             ),
+/*            child: Image.network(
+              iamgeUrl,
+              width: 80.0,
+              height: 120.0,
+              fit: BoxFit.fill,
+            ),*/
           ),
           Expanded(
               child: Container(

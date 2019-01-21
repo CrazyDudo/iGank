@@ -12,6 +12,7 @@ import 'package:igank/pages/android_project_list.dart';
 import 'package:igank/pages/test.dart';
 import 'package:igank/pages/trending.dart';
 import 'package:igank/common/utils/net_utils.dart';
+
 import 'login.dart';
 import 'package:igank/pages/trending_list.dart';
 import 'package:igank/model/android_data_entity.dart';
@@ -211,11 +212,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   margin: EdgeInsets.only(top: 10.0),
                   child: Row(
                     children: <Widget>[
-                      Text('分类：${entity.results[position].site.name}', style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 12.0,
-                      ),),
+                      Text(
+                        '分类：${entity.results[position].site.name}',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.normal,
+                          fontSize: 12.0,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -223,11 +227,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   margin: EdgeInsets.only(top: 5.0),
                   child: Row(
                     children: <Widget>[
-                      Text('日期：${entity.results[position].publishedAt}', style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 12.0,
-                      ),),
+                      Text(
+                        '日期：${entity.results[position].publishedAt}',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.normal,
+                          fontSize: 12.0,
+                        ),
+                      ),
                     ],
                   ),
                 )
@@ -250,15 +257,21 @@ class _MyHomePageState extends State<MyHomePage> {
     return Card(
       child: new ListTile(
         onTap: () {
-          Fluttertoast.showToast(msg: entity.results[position].title);
+//          Fluttertoast.showToast(msg: entity.results[position].title);
           //start webView
           runApp(new MaterialApp(
             theme: ThemeData(
               primarySwatch: Colors.blueGrey,
             ),
+/*
+            routes: {
+              '/': (_) => new WebViewPage(),
+            },
+*/
+
             routes: {
               '/': (_) => new WebviewScaffold(
-                    url:entity.results[position].url,
+                    url: entity.results[position].url,
                     appBar: new AppBar(
                       title: new Text(entity.results[position].site.name),
                     ),
